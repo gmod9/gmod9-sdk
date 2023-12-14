@@ -569,7 +569,9 @@ char *CStudioPhysics::DumpQC( void )
 		out.WriteText("\r\n");
 		while ( pPair )
 		{
-			out.WriteText( CFmtStr( "\t$jointcollide %s %s\r\n", m_pList[pPair->object0].m_boneName, m_pList[pPair->object1].m_boneName ) );
+			char szOutput[256];
+			V_snprintf(szOutput, 256, "\t$jointcollide %s %s\r\n", m_pList[pPair->object0].m_boneName, m_pList[pPair->object1].m_boneName);
+			out.WriteText(szOutput);
 			pPair = pPair->pNext;
 		}
 	}
