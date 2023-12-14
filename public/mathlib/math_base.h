@@ -604,6 +604,10 @@ template <class T> FORCEINLINE_TEMPLATE T AVG(T a, T b)
 //
 #define V_clamp(val, min, max) (((val) > (max)) ? (max) : (((val) < (min)) ? (min) : (val)))
 
+#ifndef clamp
+	#define clamp V_clamp
+#endif
+
 inline float Sign( float x )
 {
 	return (x <0.0f) ? -1.0f : 1.0f;

@@ -23,6 +23,7 @@ ipch/
 *.VC.VC.opendb
 
 # Build directories
-**/Debug/
-**/Release/
-obj.*
+**/*Debug/
+**/*Release/
+*.tlog
+*.sbr
