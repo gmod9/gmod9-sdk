@@ -92,6 +92,14 @@ public:
 MEM_INTERFACE IMemAlloc *g_pMemAlloc;
 
 //-----------------------------------------------------------------------------
+#if _WIN32 || _WIN64
+	#include <commonmacros.h>
+#else
+	inline bool IsPowerOfTwo(int value)
+	{
+		return (value & (value - 1)) == 0;
+	}
+#endif
 
 inline void *MemAlloc_AllocAligned( size_t size, size_t align )
 {
@@ -207,7 +215,7 @@ public:
 
 	#pragma warning(disable:4290)
 	#pragma warning(push)
-	#include <typeinfo.h>
+	#include <typeinfo>
 
 	// MEM_DEBUG_CLASSNAME is opt-in.
 	// Note: typeid().name() is not threadsafe, so if the project needs to access it in multiple threads

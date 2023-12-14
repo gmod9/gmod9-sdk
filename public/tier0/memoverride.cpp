@@ -118,9 +118,9 @@ inline void *ReallocUnattributed( void *pMem, size_t nSize )
 // end up in a recursion (as g_pMemAlloc->Alloc() calls malloc)
 _CRT_DUMP_CLIENT _pfnDumpClient;
 
+#define _CRTNOALIAS __declspec(noalias)
 extern "C"
 {
-	
 _CRTNOALIAS _CRTRESTRICT void *__cdecl malloc( size_t nSize )
 {
 	return AllocUnattributed( nSize );
