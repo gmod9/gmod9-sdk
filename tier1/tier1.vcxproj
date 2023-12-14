@@ -73,6 +73,7 @@ if exist ..\lib\public\tier1.pdb attrib -r ..\lib\public\tier1.pdb
     </PreLinkEvent>
     <Lib>
       <OutputFile>..\lib\public\tier1.lib</OutputFile>
+      <AdditionalDependencies>legacy_stdio_definitions.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

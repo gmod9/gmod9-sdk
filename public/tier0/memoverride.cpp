@@ -871,11 +871,11 @@ void __cdecl _aligned_free_dbg( void * memblock)
     _aligned_free(memblock);
 }
 
-size_t __cdecl _CrtSetDebugFillThreshold( size_t _NewDebugFillThreshold)
-{
-	assert(0);
-    return 0;
-}
+//size_t __cdecl _CrtSetDebugFillThreshold( size_t _NewDebugFillThreshold)
+//{
+//	assert(0);
+//    return 0;
+//}
 
 //===========================================
 // NEW!!! 64-bit
