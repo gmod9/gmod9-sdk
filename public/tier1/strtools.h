@@ -352,5 +352,12 @@ inline void V_strcat( char *dest, const char *src, int cchDest )
 
 #endif // !defined( VSTDLIB_DLL_EXPORT )
 
+template<typename T>
+inline void V_swap(T& first, T& second)
+{
+    T tmp = first;
+    first = second;
+    second = tmp;
+}
 
 #endif	// TIER1_STRTOOLS_H

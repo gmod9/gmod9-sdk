@@ -31,6 +31,7 @@
 #endif
 
 #include "mstristrip.h"
+#include "tier1/strtools.h"
 
 using namespace std;
 
@@ -295,14 +296,6 @@ int CStripper::CreateStrip(int tri, int vert, int maxlen, int *pswaps,
 //=========================================================================
 // Given a striplist and current cache state, pick the best next strip
 //=========================================================================
-template<typename T>
-inline void V_swap(T& first, T& second)
-{
-    T tmp = first;
-    first = second;
-    second = tmp;
-}
-
 STRIPLIST::iterator FindBestCachedStrip(STRIPLIST *pstriplist,
     const CVertCache &vertcachestate)
 {
