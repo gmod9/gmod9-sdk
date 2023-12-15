@@ -98,6 +98,7 @@ if exist "$(TargetDir)""$(TargetName)".map copy "$(TargetDir)""$(TargetName)".ma
       <ProgramDatabaseFile>.\Debug/phonemeextractor.pdb</ProgramDatabaseFile>
       <ImportLibrary>.\Debug/phonemeextractor.lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

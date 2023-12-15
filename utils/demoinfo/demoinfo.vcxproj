@@ -144,6 +144,7 @@ copy "$(TargetPath)" ..\..\..\bin\"$(TargetName)".pdb
       <MapFileName>.\Debug/demoinfo.map</MapFileName>
       <SubSystem>Console</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

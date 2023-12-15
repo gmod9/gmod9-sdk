@@ -149,6 +149,7 @@ copy "$(TargetPath)" ..\..\..\bin\"$(TargetName)".pdb
       <ProgramDatabaseFile>.\Debug/studiomdl.pdb</ProgramDatabaseFile>
       <SubSystem>Console</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>true</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

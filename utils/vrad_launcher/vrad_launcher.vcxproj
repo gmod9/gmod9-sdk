@@ -144,6 +144,7 @@ if exist "$(TargetPath)" copy "$(TargetPath)" ..\..\..\bin
       <ProgramDatabaseFile>.\Debug/vrad.pdb</ProgramDatabaseFile>
       <SubSystem>Console</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

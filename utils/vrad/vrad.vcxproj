@@ -103,6 +103,7 @@ if exist "$(TargetDir)""$(TargetName)".map copy "$(TargetDir)""$(TargetName)".ma
       <ProgramDatabaseFile>.\vrad___Win32_Debug/vrad.pdb</ProgramDatabaseFile>
       <ImportLibrary>.\vrad___Win32_Debug/vrad.lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

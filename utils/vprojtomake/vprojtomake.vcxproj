@@ -146,6 +146,7 @@ if exist "$(TargetPath)" copy "$(TargetPath)" ..\..\..\bin\vcpm.exe
       <MapFileName>.\Debug/vprojtomake.map</MapFileName>
       <SubSystem>Console</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

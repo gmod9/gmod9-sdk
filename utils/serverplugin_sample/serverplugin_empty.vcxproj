@@ -102,6 +102,7 @@ copy "$(TargetPath)" ..\..\..\bin\serverplugin_empty.dll
       <SubSystem>Windows</SubSystem>
       <ImportLibrary>.\Debug/serverplugin_empty.lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

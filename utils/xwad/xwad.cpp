@@ -494,13 +494,13 @@ void WriteResizeInfoFile( const char *pBaseDir, const char *pSubDir, const char 
 	fclose( fp );
 }
 
-
+#include <algorithm>
 void RunVTexOnFile( const char *pBaseDir, const char *pFilename )
 {
 	char executableDir[MAX_PATH];
 	GetModuleFileName( NULL, executableDir, sizeof( executableDir ) );
 	
-	char *pLastSlash = MAX( strrchr( executableDir, '/' ), strrchr( executableDir, '\\' ) );
+	char *pLastSlash = std::max<char*>( strrchr( executableDir, '/' ), strrchr( executableDir, '\\' ) );
 	if ( !pLastSlash )
 		Error( "Can't find filename in '%s'.\n", executableDir );
 	

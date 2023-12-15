@@ -149,6 +149,7 @@ copy "$(TargetPath)" ..\..\..\bin\"$(TargetName)".pdb
       <ProgramDatabaseFile>.\Debug/vtf2tga.pdb</ProgramDatabaseFile>
       <SubSystem>Console</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

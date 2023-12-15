@@ -103,6 +103,7 @@ if exist "$(TargetDir)""$(TargetName)".map copy "$(TargetDir)""$(TargetName)".ma
       <ProgramDatabaseFile>.\Debug/vvis.pdb</ProgramDatabaseFile>
       <ImportLibrary>.\Debug/vvis.lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
