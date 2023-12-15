@@ -92,14 +92,7 @@ public:
 MEM_INTERFACE IMemAlloc *g_pMemAlloc;
 
 //-----------------------------------------------------------------------------
-#if _WIN32 || _WIN64
-	#include <commonmacros.h>
-#else
-	inline bool IsPowerOfTwo(int value)
-	{
-		return (value & (value - 1)) == 0;
-	}
-#endif
+#include "commonmacros.h"
 
 inline void *MemAlloc_AllocAligned( size_t size, size_t align )
 {
