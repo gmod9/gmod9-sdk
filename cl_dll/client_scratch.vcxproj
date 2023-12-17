@@ -111,6 +111,7 @@ copy "$(TargetDir)"client.dll "..\..\game\sdksample\bin"
       <BaseAddress>0x24000000</BaseAddress>
       <ImportLibrary>$(IntDir)client.lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release SDK|Win32'">
