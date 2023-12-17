@@ -71,6 +71,8 @@ public:
 		va_start(args, pszFormat);
 		Q_vsnprintf(m_szBuf, SIZE_BUF, pszFormat, args);
 		va_end(args);
+
+		return m_szBuf;
 	}
 
 	// Use this for pass-through formatting
