@@ -12,6 +12,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include "tier0/platform.h"
+#include "strtools.h"
 
 #if defined( _WIN32 )
 #pragma once
@@ -20,19 +21,20 @@
 //=============================================================================
 
 // using macro to be compatable with GCC
-#define FmtStrVSNPrintf( szBuf, nBufSize, ppszFormat ) \
-	do \
-	{ \
-		int     result; \
-		va_list arg_ptr; \
-	\
-		va_start(arg_ptr, (*(ppszFormat))); \
-		result = Q_vsnprintf((szBuf), (nBufSize)-1, (*(ppszFormat)), arg_ptr); \
-		va_end(arg_ptr); \
-	\
-		(szBuf)[(nBufSize)-1] = 0; \
-	} \
-	while (0)
+//#define FmtStrVSNPrintf( szBuf, nBufSize, ppszFormat ) \
+//	do \
+//	{ \
+//		int     result; \
+//		va_list arg_ptr; \
+//	\
+//		va_start(arg_ptr, (*(ppszFormat))); \
+//		result = Q_vsnprintf((szBuf), (nBufSize)-1, (*(ppszFormat)), arg_ptr); \
+//		va_end(arg_ptr); \
+//	\
+//		(szBuf)[(nBufSize)-1] = 0; \
+//	} \
+//	while (0)
+#define FmtStrVSNPrintf( szBuf, nBufSize, ppszFormat ) static_assert(false, "Do not use FmtStrVSNPrintf")
 
 //-----------------------------------------------------------------------------
 //
@@ -46,16 +48,36 @@ public:
 	CFmtStrN()									{ m_szBuf[0] = 0; }
 	
 	// Standard C formatting
-	CFmtStrN(const char *pszFormat, ...)		{ FmtStrVSNPrintf(m_szBuf, SIZE_BUF, &pszFormat); }
+	CFmtStrN(const char *pszFormat, ...)
+	{
+		va_list args;
+
+		va_start(args, pszFormat);
+		Q_vsnprintf(m_szBuf, SIZE_BUF, pszFormat, args);
+		va_end(args);
+	}
 
 	// Use this for pass-through formatting
-	CFmtStrN(const char ** ppszFormat, ...)		{ FmtStrVSNPrintf(m_szBuf, SIZE_BUF, ppszFormat); }
+	CFmtStrN(const char* pszFormat, va_list args)
+	{
+		Q_vsnprintf(m_szBuf, SIZE_BUF, pszFormat, args);
+	}
 
 	// Explicit reformat
-	const char *sprintf(const char *pszFormat, ...)	{ FmtStrVSNPrintf(m_szBuf, SIZE_BUF, &pszFormat); return m_szBuf; }
+	const char* sprintf(const char* pszFormat, ...)
+	{
+		va_list args;
+
+		va_start(args, pszFormat);
+		Q_vsnprintf(m_szBuf, SIZE_BUF, pszFormat, args);
+		va_end(args);
+	}
 
 	// Use this for pass-through formatting
-	void VSprintf(const char **ppszFormat, ...)	{ FmtStrVSNPrintf(m_szBuf, SIZE_BUF, ppszFormat); }
+	void VSprintf(const char* pszFormat, va_list args)
+	{
+		Q_vsnprintf(m_szBuf, SIZE_BUF, pszFormat, args);
+	}
 
 	// Use for access
 	operator const char *() const				{ return m_szBuf; }
