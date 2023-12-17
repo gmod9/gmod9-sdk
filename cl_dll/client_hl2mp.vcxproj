@@ -109,6 +109,7 @@ copy "$(TargetDir)"client.dll "..\..\game\hl2mp\bin"
       <BaseAddress>0x24000000</BaseAddress>
       <ImportLibrary>$(IntDir)client.lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release HL2MP|Win32'">
