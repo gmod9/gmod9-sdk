@@ -78,7 +78,7 @@ copy "$(TargetDir)"client.dll "..\..\game\hl2\bin"
       <PreprocessorDefinitions>HL2_CLIENT_DLL;HL2_EPISODIC;_DEBUG;fopen=dont_use_fopen;NO_STRING_T;CLIENT_DLL;_WINDOWS;VECTOR;strncpy=use_Q_strncpy_instead;_snprintf=use_Q_snprintf_instead;_WIN32;PROTECTED_THINGS_ENABLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling />
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
       <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <PrecompiledHeader>Use</PrecompiledHeader>
@@ -115,6 +115,7 @@ copy "$(TargetDir)"client.dll "..\..\game\hl2\bin"
       <BaseAddress>0x24000000</BaseAddress>
       <ImportLibrary>$(IntDir)client.lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release HL2|Win32'">
