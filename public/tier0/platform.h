@@ -227,11 +227,13 @@ typedef void * HINSTANCE;
 #ifdef GNUC
 #undef offsetof
 //#define offsetof( type, var ) __builtin_offsetof( type, var ) 
-#define offsetof(s,m)	(size_t)&(((s *)0)->m)
+#define offsetof2(s,m)	(size_t)&(((s *)0)->m)
 #else
 #undef offsetof
-#define offsetof(s,m)	(size_t)&(((s *)0)->m)
+#define offsetof2(s,m)	(size_t)&(((s *)0)->m)
 #endif
+
+#define offsetof offsetof2
 
 // Used to step into the debugger
 #ifdef _WIN32
