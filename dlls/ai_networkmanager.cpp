@@ -46,7 +46,10 @@ inline void DebugConnectMsg( int node1, int node2, const char *pszFormat, ... )
 {
 	if ( DebuggingConnect( node1, node2 ) )
 	{
-		DevMsg( CFmtStr( &pszFormat ) );
+		va_list args;
+		va_start(args, pszFormat);
+		DevMsg( CFmtStr( pszFormat, args ) );
+		va_end(args);
 	}
 }
 

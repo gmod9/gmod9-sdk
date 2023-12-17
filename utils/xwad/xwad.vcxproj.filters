@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{96130d98-c01f-44d8-ad33-bbe02e22be92}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{645acff5-74dc-4bc7-b3f3-1b0b36e9e70f}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="goldsrc_standin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lbmlib.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wadlib.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xwad.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="goldsrc_bspfile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="goldsrc_standin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lbmlib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wadlib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

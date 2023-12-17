@@ -31,6 +31,7 @@
 #endif
 
 #include "mstristrip.h"
+#include "tier1/strtools.h"
 
 using namespace std;
 

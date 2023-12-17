@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{c032f265-f2c8-4abd-a56a-aa2a08850779}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{29d6d50b-f332-406b-a858-df10ef6c3f06}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Link Libraries">
+      <UniqueIdentifier>{b65e27b6-30eb-46d7-87f8-9ca003d0c3b8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vvis_launcher.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\public\tier1\interface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\..\lib\public\tier1.lib">
+      <Filter>Link Libraries</Filter>
+    </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\lib\public\tier0.lib">
+      <Filter>Link Libraries</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\lib\public\vstdlib.lib">
+      <Filter>Link Libraries</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

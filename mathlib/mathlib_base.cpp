@@ -4911,6 +4911,10 @@ float CalcDistanceSqrToLine( const Vector &P, const Vector &vLineA, const Vector
 	return P.DistToSqr(vClosest);
 }
 
+#ifndef clamp
+#define clamp V_clamp
+#endif
+
 void CalcClosestPointOnLineSegment( const Vector &P, const Vector &vLineA, const Vector &vLineB, Vector &vClosest, float *outT )
 {
 	Vector vDir;

@@ -118,9 +118,9 @@ inline void *ReallocUnattributed( void *pMem, size_t nSize )
 // end up in a recursion (as g_pMemAlloc->Alloc() calls malloc)
 _CRT_DUMP_CLIENT _pfnDumpClient;
 
+#define _CRTNOALIAS __declspec(noalias)
 extern "C"
 {
-	
 _CRTNOALIAS _CRTRESTRICT void *__cdecl malloc( size_t nSize )
 {
 	return AllocUnattributed( nSize );
@@ -571,11 +571,11 @@ int __cdecl _CrtSetDbgFlag( int nNewFlag )
 #define AFNAME(var) __p_ ## var
 #define AFRET(var)  &var
 
-int _crtDbgFlag = _CRTDBG_ALLOC_MEM_DF;
-int* AFNAME(_crtDbgFlag)(void)
-{
-	return AFRET(_crtDbgFlag);
-}
+//int _crtDbgFlag = _CRTDBG_ALLOC_MEM_DF;
+//int* AFNAME(_crtDbgFlag)(void)
+//{
+//	return AFRET(_crtDbgFlag);
+//}
 
 long _crtBreakAlloc;      /* Break on this allocation */
 long* AFNAME(_crtBreakAlloc) (void)
@@ -871,11 +871,11 @@ void __cdecl _aligned_free_dbg( void * memblock)
     _aligned_free(memblock);
 }
 
-size_t __cdecl _CrtSetDebugFillThreshold( size_t _NewDebugFillThreshold)
-{
-	assert(0);
-    return 0;
-}
+//size_t __cdecl _CrtSetDebugFillThreshold( size_t _NewDebugFillThreshold)
+//{
+//	assert(0);
+//    return 0;
+//}
 
 //===========================================
 // NEW!!! 64-bit
@@ -960,6 +960,9 @@ struct _is_ctype_compatible {
         unsigned long id;
         int is_clike;
 };
+
+typedef UINT LC_ID; // https://github.com/ValveSoftware/source-sdk-2013/blob/master/mp/src/public/tier0/memoverride.cpp#L1329
+
 typedef struct setloc_struct {
     /* getqloc static variables */
     char *pchLanguage;
@@ -978,6 +981,11 @@ typedef struct setloc_struct {
     /* _setlocale_set_cat (LC_CTYPE) static variable */
     struct _is_ctype_compatible _Lcid_c[5];
 } _setloc_struct, *_psetloc_struct;
+
+//I don't have a clue where these types are defined
+#include <corecrt.h>
+typedef __crt_multibyte_data *pthreadmbcinfo;
+typedef __crt_locale_data *pthreadlocinfo;
 
 struct _tiddata {
     unsigned long   _tid;       /* thread ID */
@@ -1069,9 +1077,12 @@ struct _tiddata {
 
 typedef struct _tiddata * _ptiddata;
 
+typedef __crt_locale_pointers _locale_tstruct;
+
 class _LocaleUpdate
 {
     _locale_tstruct localeinfo;
+
     _ptiddata ptd;
     bool updated;
     public:

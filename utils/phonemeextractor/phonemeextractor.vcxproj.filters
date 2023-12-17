@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{3732c6af-4c90-4ce7-bd9a-d1e07a532877}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Link Libraries">
+      <UniqueIdentifier>{4e371250-bdb2-40e9-a5c6-88c1c2f80f1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{fe2147ae-aa75-427d-a731-3b887db6c9ed}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;fi;fd</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\common\cmdlib.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="extractor_utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\public\filesystem_helpers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\public\filesystem_init.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\filesystem_tools.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\public\tier0\memoverride.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="phonemeconverter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="phonemeextractor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\public\sentence.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\..\lib\public\mathlib.lib">
+      <Filter>Link Libraries</Filter>
+    </Library>
+    <Library Include="..\..\lib\public\tier0.lib">
+      <Filter>Link Libraries</Filter>
+    </Library>
+    <Library Include="..\..\lib\public\tier1.lib">
+      <Filter>Link Libraries</Filter>
+    </Library>
+    <Library Include="..\..\lib\public\vstdlib.lib">
+      <Filter>Link Libraries</Filter>
+    </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Public\amd3dx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Public\tier0\basetypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\cmdlib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Public\commonmacros.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\public\tier0\dbg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\public\tier0\fasttimer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Public\FileSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\public\filesystem_helpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\filesystem_tools.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\public\appframework\IAppSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Public\MATHLIB.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="phonemeconverter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\public\phonemeextractor\phonemeextractor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\public\tier0\platform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\public\protected_things.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sapi51\Include\sapi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sapi51\Include\sapiddk.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Public\sentence.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sapi51\Include\Spddkhlp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sapi51\Include\spdebug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sapi51\Include\sperror.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sapi51\Include\sphelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\public\string_t.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\public\vstdlib\strtools.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="talkback.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\public\tier1\utllinkedlist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\public\tier1\utlmemory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\public\tier1\utlvector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Public\vector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Public\vector2d.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\public\vstdlib\vstdlib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\sapi51\lib\i386\sapi.lib">
+      <Filter>Link Libraries</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>
