@@ -108,13 +108,13 @@ public:
 
 #if !defined(_STATIC_LINKED) || !defined(_SUBSYSTEM)
 #define EXPOSE_INTERFACE(className, interfaceName, versionName) \
-	static void* __Create##className##_interface() {return (interfaceName *)new className;} \
+	static void* __Create##className##_interface() {return static_cast<interfaceName*>(new className);} \
 	static InterfaceReg __g_Create##className##_reg(__Create##className##_interface, versionName );
 #else
 #define EXPOSE_INTERFACE(className, interfaceName, versionName) \
 	namespace _SUBSYSTEM \
 	{	\
-		static void* __Create##className##_interface() {return new className;} \
+		static void* __Create##className##_interface() {return static_cast<interfaceName*>(new className);} \
 		static InterfaceReg __g_Create##className##_reg(__Create##className##_interface, versionName ); \
 	}
 #endif
@@ -122,13 +122,17 @@ public:
 // Use this to expose a singleton interface with a global variable you've created.
 #if !defined(_STATIC_LINKED) || !defined(_SUBSYSTEM)
 #define EXPOSE_SINGLE_INTERFACE_GLOBALVAR(className, interfaceName, versionName, globalVarName) \
-	static void* __Create##className##interfaceName##_interface() {return &globalVarName;} \
+	static void* __Create##className##interfaceName##_interface() {return static_cast<interfaceName*>(&globalVarName);} \
+	static InterfaceReg __g_Create##className##interfaceName##_reg(__Create##className##interfaceName##_interface, versionName);
+
+#define EXPOSE_SINGLE_INTERFACE_GLOBALVAR_REPR(className, interfaceName, versionName, globalVarName) \
+	static void* __Create##className##interfaceName##_interface() {return reinterpret_cast<interfaceName*>(&globalVarName);} \
 	static InterfaceReg __g_Create##className##interfaceName##_reg(__Create##className##interfaceName##_interface, versionName);
 #else
 #define EXPOSE_SINGLE_INTERFACE_GLOBALVAR(className, interfaceName, versionName, globalVarName) \
 	namespace _SUBSYSTEM \
 	{ \
-		static void* __Create##className##interfaceName##_interface() {return &globalVarName;} \
+		static void* __Create##className##interfaceName##_interface() {static_cast<interfaceName*>(&globalVarName);} \
 		static InterfaceReg __g_Create##className##interfaceName##_reg(__Create##className##interfaceName##_interface, versionName); \
 	}
 #endif

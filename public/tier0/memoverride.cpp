@@ -720,10 +720,15 @@ extern "C" _CRTNOALIAS _CRTRESTRICT void * __cdecl _aligned_offset_recalloc( voi
     return _aligned_offset_recalloc_dbg(memblock, count, size, align, offset, NULL, 0);
 }
 
-extern "C" void * __cdecl _recalloc_dbg ( void * memblock, size_t count, size_t size, int nBlockUse, const char * szFileName, int nLine )
+//extern "C" void * __cdecl _recalloc_dbg ( void * memblock, size_t count, size_t size, int nBlockUse, const char * szFileName, int nLine )
+//{
+//	Assert(0);
+//	return NULL;
+//}
+
+extern "C" void* __cdecl _recalloc_dbg(void* memblock, size_t count, size_t size, int nBlockUse, const char* szFileName, int nLine)
 {
-	Assert(0);
-	return NULL;
+	return _aligned_offset_recalloc_dbg(memblock, count, size, 0, 0, szFileName, nLine);
 }
 
 _CRT_REPORT_HOOK __cdecl _CrtGetReportHook( void )
